@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-color: hsl(0deg, 0%, 0%);
+            }
+
+            main {
+                width: 100vw;
+                height: 100vh;
+                max-width: 100%;
+                display: grid;
+                place-items: center;
+                position: relative;
+            }
+
+            .box {
+                width: 350px;
+                height: 500px;
+                padding: 10px;
+                color: white;
+                background: hsl(0deg, 0%, 0%);
+                border-radius: 8px;
+                position: relative;
+            }
+
+            .box:hover {
+                background: hsl(280deg, 100%, 50%);
+                color: black;
+            }
+            /* 
+                使用伪类来实现背景边框
+            */
+            .box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    45deg,
+                    hsl(300deg, 100%, 50%),
+                    hsl(200deg, 100%, 50%),
+                    hsl(100deg, 100%, 50%)
+                );
+                filter: blur(24px);
+                z-index: -1;
+            }
+
+            .box-tips {
+                width: 0;
+                height: 200px;
+                box-sizing: border-box;
+                background-color: rgb(18, 19, 18);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: width 2s;
+                overflow: hidden;
+                border-radius: 0 8px 8px 0;
+                color: white;
+            }
+
+            .box:hover .box-tips  {
+                width: 370px;
+            }
+
+            .first,
+            .second {
+                position: absolute;
+                width: 300px;
+                height: 100px;
+                left: -500px;
+            }
+
+            .first {
+                top: 100px;
+            }
+
+            .box:hover .first,
+            .box:hover .second {
+                left: 0;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="box">
+                testing
+                <div class="box-tips">
+                    <span class="first">至少现在有这个能力做到了 ，但是用户的权限什么的 如何开放就需要通过一些申请 或者什么机制来控制下</span>
+                    <span class="second">需要研究下 哪些权限能够支持用户自定义上传，而不会干扰 admin 权限 和 训练营相关的管理</span>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

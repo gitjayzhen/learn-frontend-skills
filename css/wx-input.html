@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wx-input</title>
+    <style>
+        .main {
+            width: 100% - 60px;
+            height: calc(100vh - 80px);
+            background-color: rgb(231, 229, 229);
+            margin: 30px;
+            padding: 10px;
+        }
+
+        .wx-input {
+            background-color: rgb(175, 179, 177);
+            line-height: 45px;
+            border-radius: 3px;
+            padding-left: 10px;
+            color: rgb(88, 88, 88);
+            cursor: text;
+        }
+
+        .wx-input:active {
+            display: none;
+        }
+
+        .wx-input:active + .wx-area textarea {
+            display:block;
+            
+        }
+        .wx-input:hover + .wx-area textarea {
+            display:block;
+        }
+
+        .wx-area textarea {
+            width: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="wx-input">
+            写下你的留言
+        </div>
+        <div class="wx-area">
+            <textarea name="" id="" cols="30" rows="4" placeholder="留言被公众号精选后，会对所有人可见"></textarea>
+        </div>
+    </div>
+</body>
+</html>
